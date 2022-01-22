@@ -1,7 +1,9 @@
+#![windows_subsystem = "windows"]
+
 use std::fs::{ OpenOptions };
 use std::process::Command;
+//use std::os::windows::process::CommandExt;
 use serde::{ Deserialize, Deserializer };
-//use serde_json::Result;
 use gtk::prelude::*;
 use gtk::{Align, Application, ApplicationWindow, Button, Label, Orientation};
 use webbrowser;
@@ -101,6 +103,7 @@ fn build_ui(application: &Application) {
                 EntryAction::LaunchScript => {
                     println!("Launch: {}", &entry.path);
                     Command::new("cmd")
+                        //.creation_flags(winapi::um::winbase::CREATE_NO_WINDOW)
                         .args(&["/C", &entry.path]);
                         //.expect("failed to execute process");
                 }

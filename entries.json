@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Heise Homepage",
+    "action": "openurl",
+    "description": "Öffnet einen Browser unter heise.de",
+    "path": "https://heise.de"
+  },
+  {
+    "title": "A Script2",
+    "action": "launchscript",
+    "description": "Führt Script aus",
+    "path": "c:\\script.bat"
+  }
+]
